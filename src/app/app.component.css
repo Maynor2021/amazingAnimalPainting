@@ -114,7 +114,7 @@
   /* Links dentro de los botones */
   .example-icon a {
     text-decoration: none;
-    color: white;
+    color: rgb(28, 24, 24);
     font-weight: bold;
     font-size: 16px;
     padding: 10px;
@@ -126,3 +126,6 @@
     color: #FFD700; /* Amarillo dorado */
   }
   
+  .product-container{
+    background-color: #261c32;
+  }

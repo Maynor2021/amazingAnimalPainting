@@ -9,10 +9,11 @@ import { FlexLayoutModule } from 'ngx-flexible-layout';
 
 
 import {MatCardModule} from '@angular/material/card';
+import { AppComponent } from "../../app.component";
 
 @Component({
   selector: 'app-product-list',
-  imports: [CommonModule,MatButtonModule,MatCardModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, AppComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
   
