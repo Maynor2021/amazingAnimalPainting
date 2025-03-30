@@ -1,53 +1,95 @@
-.Product-card{
-    max-width: 150px;
+/* Contenedor principal */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.product-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se acomoden automáticamente */
-    gap: 20px; /* Espacio entre tarjetas */
-    justify-content: center; /* Centra las tarjetas */
-    padding: 20px;
-  }
-  
-  .product-card {
-    width: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    text-align: center;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .product-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transform: scale(1.50);
-    cursor :pointer;
-    
-  }
+/* Tarjeta de producto */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
 
-  
-  .product-content {
-    padding: 10px;
-  }
-  
-  .product-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .product-price {
-    font-size: 16px;
-    color: #009688;
-    font-weight: bold;
-  }
-  
+/* Contenedor de imagen con tamaño fijo */
+.product-image-container {
+  width: 100%;
+  height: 200px; /* Altura fija */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8; /* Fondo gris claro */
+  padding: 10px;
+}
+
+/* Imagen del producto */
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Mantiene relación de aspecto */
+  transition: transform 0.3s ease;
+}
+
+/* Contenido de la tarjeta */
+.product-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Estilos para texto */
+.product-price {
+  color: #e53935; /* Rojo para el precio */
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+.stock-label {
+  margin: 8px 0 4px 0;
+  color: #666;
+}
+
+.stock-value {
+  font-weight: bold;
+  color: #2e7d32; /* Verde para el stock */
+}
+
+/* Controles de stock */
+.stock-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: auto;
+  padding: 10px 0;
+}
+
+/* Spinner de carga */
+.loading-spinner {
+  margin: 20px auto;
+  grid-column: 1 / -1;
+}
+
+/* Efectos hover */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Botones deshabilitados */
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

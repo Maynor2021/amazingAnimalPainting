@@ -1,18 +1,22 @@
 @keyframes colorPulse {
-    0% { color: #4A148C; }  /* Morado oscuro */
+    0% { color: #81ddd8; }  /* Morado oscuro */
     50% { color: #000000; } /* Negro */
-    100% { color: #4A148C; } 
+    100% { color: #56b6ae; } 
   }
   
   .container {
     text-align: center;
     padding: 50px;
-    background: linear-gradient(45deg, #593585, #000000);
+    background: linear-gradient(45deg, #4ca754, #000000);
     height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('/assets/LOGO.png');
+    background-size: contain;  /* Ajusta la imagen para que entre completamente */
+    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
   }
   .honeycomb{
     position: absolute;
@@ -45,7 +49,7 @@
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
   }
   .toolbar {
-  background: linear-gradient(45deg, #4A148C, #000000);
+  background: linear-gradient(45deg, #9bf0d2, #4fe36a);
   display: flex;
   align-items: center;
   padding: 10px 20px;
@@ -130,3 +134,46 @@
   .product-container{
     background-color: #261c32;
   }
+
+  .toolbar {
+    background: linear-gradient(45deg, #3cd3ad, #1fa463);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos */
+    padding: 12px 24px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.4s ease-in-out, box-shadow 0.3s;
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Efecto de elevación al pasar el mouse */
+  .toolbar:hover {
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Estilo de los botones */
+  .toolbar button {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Efecto hover */
+  .toolbar button:hover {
+    background: linear-gradient(135deg, #66bb6a, #388e3c);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Efecto al presionar el botón */
+  .toolbar button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  

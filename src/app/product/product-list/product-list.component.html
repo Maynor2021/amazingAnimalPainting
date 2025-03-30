@@ -1,11 +1,29 @@
-
 <div class="product-container">
   <mat-card class="product-card" *ngFor="let product of products">
-    <img src="assets/images/Product_01.jpg" alt="Product Image" class="product-image">
+    <div class="product-image-container">
+      <img [src]="'assets/images/' + product.image_url" 
+           [alt]="product.name" 
+           class="product-image">
+    </div>
     <mat-card-content class="product-content">
-      <mat-card-title class="product-title">{{ product.name }}</mat-card-title>
-      <mat-card-subtitle class="product-price">{{ product.price | currency:'LPS' }}</mat-card-subtitle>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle class="product-price">
+        {{ product.price | currency:'HNL':'symbol':'1.2-2' }}
+      </mat-card-subtitle>
+      <p class="stock-label">Stock: <span class="stock-value">{{ product.stock }} Lbs</span></p>
+      
+      <div class="stock-controls">
+        <button mat-mini-fab color="warn" 
+                (click)="decreaseStock(product)" 
+                [disabled]="product.stock <= 0">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="increaseStock(product)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
     </mat-card-content>
   </mat-card>
-  
+
+  <mat-spinner *ngIf="loading" diameter="50" class="loading-spinner"></mat-spinner>
 </div>

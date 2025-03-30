@@ -4,7 +4,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProductListComponent } from "./product/product-list/product-list.component";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbarModule, ProductListComponent],
+  imports: [RouterOutlet, MatToolbarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
